@@ -1,0 +1,88 @@
+CardColumns {
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#covid {
+    border-style: solid;
+    border-color: black;
+    background-color:cornsilk;
+    width: 100%;
+    font-size: large;
+    font-style: oblique;
+    font-weight: bolder;
+}
+
+#covid19 {
+    background-color: lightslategray;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+#joinNow {
+    background-color: black;
+    border-color: black;
+    margin: 20px;
+    align-self: center;
+}
+
+#hiring {
+    background-color: black;
+    border-color: black;
+    margin: 18px;  
+}
+
+#gallery {
+    background-color: black;
+    border-color: black; 
+}
+
+#links {
+    background-color: black;
+    border-color: black; 
+}
+
+#posted {
+    background-color: black;
+    border-color: black; 
+}
+
+#contactUs {
+    background-color: black;
+    border-color: black;
+}
+
+#store {
+height: 50px;
+margin: auto;
+border-style: solid;
+border-color: black;
+border-width: 3px;
+}
+
+#media {
+height: 50px;
+margin: auto;
+border-style: solid;
+border-color: black;
+border-width: 3px;
+}
+
+#galleryHeadline {
+ color: darkblue;
+ font-weight: bolder;
+ font-family: Georgia, "Times New Roman", Times, serif; 
+ margin: 10px;  
+}
+
+#allvac, #accessible, #organized {
+margin-left: 100px;
+margin-right: 100px;
+border-style: solid;
+border-color: black;
+border-width: 3px;
+background-color: gray;
+color: black;
+}

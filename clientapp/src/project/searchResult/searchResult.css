@@ -1,0 +1,14 @@
+#titleRow {
+display: flex;
+justify-content: center;
+}
+
+#searchTitle {
+    color: black;
+    font-weight: bolder;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+    align-items: center;
+    display:inline;
+    margin-left: "200px";
+}

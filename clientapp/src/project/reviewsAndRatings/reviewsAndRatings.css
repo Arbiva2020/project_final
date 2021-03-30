@@ -1,0 +1,28 @@
+#reviwesTitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#cardReviewA, #cardReviewB {
+  margin-top: 30px;
+}
+
+#pencilImg {
+  height: 300px;
+  width: auto;
+}
+
+#cardPencil {
+  margin-bottom: 0px;
+}
+
+#nextRev, #prevRev {
+  margin: 20px;
+  margin-top: 0px;
+  background-color: gray;
+  border-style: solid;
+  border-color: black;
+}

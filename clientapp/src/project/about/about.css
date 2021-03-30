@@ -1,0 +1,65 @@
+#return {
+    margin: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#nav-dropdown {
+    margin: 40px;
+}
+
+#contactUsButt {
+    margin: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#aboutButt {
+    display: flex;
+    margin: 20px;
+    display: flex;
+    justify-content: center;   
+}
+
+
+#cardAbout {
+    height: 100px;
+    
+}
+
+#aboutInfo {
+    line-height: 80px;
+}
+
+#cardImg {
+   width: 100%; 
+    height: 500px;
+}
+
+#headLine {
+    font-size: large; 
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+#card {
+    font-family: Georgia, serif;
+    font-size:x-large; 
+    color:midnightblue;
+    width:100%
+}
+
+#aboutText {
+    font-weight: bold;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+#transportation {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}

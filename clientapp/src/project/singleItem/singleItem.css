@@ -1,0 +1,46 @@
+#itemImgCard {
+    align-content: center;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#colItem {
+    display: flex;
+    justify-content: center;
+}
+
+.sideImgCard {
+    display:flex;
+    justify-content:right;
+    margin-top: 40px;
+    margin-left: 60px;
+}
+
+#itemDetailCard {
+    margin-top: 40px;
+    border-style: none;
+}
+
+#singleTitle { 
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bolder;
+    color: black;
+}
+
+#addToCart, #addToWishlist {
+    margin: 10px;
+    width: 130px;
+   display: flex;
+   margin-left: 60px;
+   text-align: center;
+}
+
+#mightLike {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bolder;
+    color: black;
+    margin: 50px;   
+}

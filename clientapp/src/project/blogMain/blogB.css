@@ -1,0 +1,38 @@
+#allBlogsH1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+col#photoPart2 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y:visible;
+}
+#rowSortBlog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ #nextBlogButt, #prevBlogButt, #sortByArea {
+  background-color: lightslategray;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  margin: 50px;
+  color: white;
+  display: inline-block;
+  align-self: center;
+ justify-content: center; 
+ }
+
+ 
+

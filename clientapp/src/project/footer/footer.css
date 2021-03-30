@@ -1,0 +1,33 @@
+#rights {
+  font-size: 10px;
+  color: white;
+  margin: auto;
+}
+
+.mr-auto {
+  align-items: center;
+}
+
+#fonts {
+  size: 100px;
+}
+
+#contact {
+  border-style: solid;
+  border-color: white;
+  color: white;
+  margin: 20px;
+}
+
+#search {
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+
+#footerNav {
+  height: 60px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

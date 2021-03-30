@@ -1,0 +1,42 @@
+#productsHeadline {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#storeCard {
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+    margin: 20px;
+    color: black;
+}
+
+#headNavStore {
+    display: flex;
+    color: black;
+}
+
+.itemStore {
+    align-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    color: black;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bolder;
+}
+
+#showProductButt {
+    background-color: gray;
+    border-style: solid;
+    border-color: black;
+}
+
+.apparel {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: none;
+}

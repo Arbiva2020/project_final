@@ -1,0 +1,31 @@
+#fromMediah3 {
+  color: black;
+  font-weight: bolder;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#jerusalemMediaImg {
+  width: auto;
+  height: 50%;
+  background-size: contain;
+  object-fit: cover;
+}
+
+.press:hover {
+ background-color: gray;
+ /* opacity: 0.8; */
+}
+
+/* #mediaDiv {
+display: flex;
+justify-content: center;
+} */
+
+.press:hover {
+  transform:scale(1.5, 1.5);
+  background-color: lightgrey;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+ }
+

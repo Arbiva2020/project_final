@@ -1,0 +1,163 @@
+#check {
+  text-align: left;
+  padding: 10px;
+}
+
+#storeLinkContainer {
+  border-style: solid;
+  border-color: black;
+  background-color:cornsilk;
+  width: 100%;
+  color: black;
+  font-size: large;
+  font-style: oblique;
+  font-weight: bolder;
+}
+
+#filterByPrice {
+  display: inline;
+  text-align: center;
+  padding: 20px;
+
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  /* overflow-y: scroll; */
+}
+
+#dropdown-item-button {
+    margin: 20px;
+    background-color:gray;
+    color:white;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+  
+}
+
+#byRating {
+  align-items: left;
+  display: left;
+}
+
+#sort, #filterRating {
+    margin: 20px;
+    margin-top: 10px;
+    background-color:gray;
+    color:white;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    display:block;
+  
+}
+
+#ratingHeadline {
+  margin: 20px;
+  width: 100px;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#ratingSelect {
+  text-align: left; 
+  margin: 20px;
+  background-color: gray;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  color: white;
+}
+
+#siteCard {
+  margin: 20px;
+}
+
+.radio {
+  display: inline-block;
+  text-align:left;
+}
+
+/* #rent {
+  size:inherit;
+  transform:scale(1, 1);
+  transition: 1s;
+  width: 100%;
+} */
+/* #rent:hover{
+  transform:scale(1.5, 1.5);
+} */
+
+#selectPrice {
+  margin: 20px;
+  display: block;
+  text-align: left;
+}
+
+/* #camp {
+  margin: 20px;
+  size:inherit;
+  transform:scale(1, 1);
+  transition: 1s;
+  width: 100%;
+} */
+/* #camp:hover{
+    transform:scale(1.5, 1.5);
+} */
+
+/* #aid {
+  size:inherit;
+  transform:scale(1, 1);
+  transition: 1s;
+} */
+/* #aid:hover{
+  transform:scale(1.5, 1.5);
+} */
+
+
+.transportation {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#filterCheck {
+  margin: 20px;
+  background-color: gray;
+  color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+
+.bg-darkA {
+  size: inherit;
+  margin: 20px;
+  transform:scale(1, 1);
+  transition: 1s;
+  width: 100%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+ #rent:hover, #aid:hover,  #camp:hover {
+  transform:scale(1.5, 1.5);
+ }
+
+#camp, #aid, #rent {
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+#sortByPrice {
+  width: 100px;
+  text-align: left;
+}
+
+#priceLevel {
+  width: 100px;
+  text-align: left; 
+}
