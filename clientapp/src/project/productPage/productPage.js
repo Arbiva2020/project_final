@@ -114,7 +114,7 @@ function ProductPage(props) {
                 borderColor: "black",
                 margin: "20px",
                 width: "100%",
-                alignContent: "center",
+                alignContent: "center", 
               }}
             >
               <h1 style={{fontWeight:"bolder", color:"black"}}>50% OFF!!!</h1>

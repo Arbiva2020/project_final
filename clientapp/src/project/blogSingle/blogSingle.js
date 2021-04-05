@@ -25,8 +25,7 @@ function BlogSingle(props) {
   return (
     <div>
       <Row>
-
-      <Col xs={9}>
+      <Col xs={9} style={{alignText:"left"}}>
           <h4 id="mainheadlineblog">The most interesting blogs</h4>
           <h3 id="headlineblog">All in one place!</h3>
           <h3 id="thirdblogheadline">{blog.headline}</h3>
@@ -56,8 +55,8 @@ function BlogSingle(props) {
       <Col xs={3} style={{borderStyle:"groove"}}>
       <h5 style={{fontWeight:"bold", margin:"20px"}}>How would you like to post a blog?</h5>  
       <Form>
-    <Form.Group as={Col} controlId="formGridEmail">
-      <Form.Control type="email" placeholder="Enter email" />
+    <Form.Group as={Col} style={{alignItems:"left", display:"flex", justifyContent:"left"}} controlId="formGridEmail">
+      <Form.Control type="email" style={{width:"100%", alignContent:"left", display:"flex"}} placeholder="Enter email" />
     </Form.Group>
 
   <Form.Group controlId="formGridAddress1">
@@ -76,13 +75,11 @@ function BlogSingle(props) {
 
   <Form>
   <Form.Group controlId="exampleForm.ControlTextarea1">
-    <Form.Label>Example textarea</Form.Label>
-    <Form.Control as="textarea" rows={3} />
+    <Form.Control as="textarea"  placeholder="Free content" rows={3} />
   </Form.Group>
-  <div className="mb-3">
+  <div className="mb-3" style={{alignText:"left"}}>
     <Form.File id="formcheck-api-regular">
-      <Form.File.Label>Regular file input</Form.File.Label>
-      <Form.File.Input />
+      <Form.File.Input/>
     </Form.File>
   </div>
 </Form>

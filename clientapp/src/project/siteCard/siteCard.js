@@ -207,22 +207,22 @@ function SiteCard(props) {
                 Transportation:
               </h5>
             </p>
-            <Card className="transportation">
+            <Card className="transportation" style={{marginBottom:"20px"}}>
               <Card.Link href="https://www.egged.co.il/">
                 <Card.Img src={eggedImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation">
+            <Card className="transportation" style={{marginBottom:"20px"}}>
               <Card.Link href="https://www.rail.co.il/">
                 <Card.Img src={trainImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation">
+            <Card className="transportation" style={{marginBottom:"20px"}}>
               <Card.Link href="https://www.metropoline.com/Pages/Home.aspx?p=Home#/HomeMain/1">
                 <Card.Img src={metroImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation">
+            <Card className="transportation" style={{marginBottom:"20px"}}>
               <Card.Link href="https://www.israir.co.il/">
                 <Card.Img src={israImg} alt="Card image" />
               </Card.Link>

@@ -1,3 +1,9 @@
+require('../data/db');
+const express = require('express');
+const router = express.Router();
+const userModel = require('../models/User');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 import react from "react";
 import axios from "axios";
 import { Card, Button, Col, Table, Row } from "react-bootstrap";
@@ -40,7 +46,7 @@ function AdminPage(props) {
   ));
   return (
     <div id="">
-      <Table
+      <User
           id="cartTable"
           style={{
             borderStyle: "solid",
@@ -61,7 +67,7 @@ function AdminPage(props) {
           </thead>
 
           <tbody>{rows}</tbody>
-        </Table>
+        </User>
     </div>
   );
 }

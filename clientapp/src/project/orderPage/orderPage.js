@@ -44,7 +44,7 @@ function OrderPage(props) {
   return (
     <div>
       <p>
-        <h1 id="headlineOrder">Order:</h1>
+        <h1 id="headlineOrder">Tank you for choosing to travel with us!</h1>
       </p>
       <Row>
         <Col xs={2}></Col>
