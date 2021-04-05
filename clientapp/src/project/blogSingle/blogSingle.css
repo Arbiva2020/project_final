@@ -1,5 +1,29 @@
-h1 {
-    color: blue;
-    font-weight: bolder;
+#mainheadlineblog {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bolder;
+        color: black;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
 
-}
+      #headlineblog {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        /* font-weight: bolder; */
+        color: black;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      } 
+
+      #thirdblogheadline {
+          color:blue;
+         font-weight: bolder;
+      }
+
+      #blogsubmit{
+          color:blue
+      }
+
+      #blogsingleImg {
+        float: right;
+        
+      } 

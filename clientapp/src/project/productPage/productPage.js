@@ -94,6 +94,9 @@ function ProductPage(props) {
                 <Card.Link>Add review & rate</Card.Link>
               </LinkContainer>
             </Card.Body>
+            <Button variant="secondary" size="lg" id="buttBook" href="/orderPage">
+            BOOK NOW!
+          </Button>
           </Card>
         </Col>
 
@@ -156,9 +159,7 @@ function ProductPage(props) {
       </Row>
       <Row id="rowE">
         <Col>
-          <Button variant="secondary" size="lg" id="buttBook" href="/orderPage">
-            BOOK NOW!
-          </Button>
+          
         </Col>
       </Row>
     </Container>

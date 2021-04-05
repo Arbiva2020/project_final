@@ -29,6 +29,9 @@ router.get("/items/price/:price", (req, res) => {
 router.get("/:category", (req, res) => {
   console.log(req.params);
   if (req.params.category) {
+    // itemModel.find({category: req.params.category}, (error,items)=> {
+    //   res.json(items);
+    // })
     itemModel.find(
       {
         $or: [

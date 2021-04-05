@@ -9,7 +9,7 @@ function ContactUs(props) {
   let [form, setForm] = useState(Form);
   function updateForm() {
     let name = document.getElementById("nameInput").value;
-    setForm(name);
+    setForm(name); 
   }
 
   const { register, handleSubmit, watch, errors } = useForm();

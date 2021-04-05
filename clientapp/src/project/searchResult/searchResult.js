@@ -12,15 +12,14 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./searchResult.css";
-const devUrl = "http://localhost:3001/images/";
 
 function SearchResult(props) {
   const [productsArray, setProductsArray] = useState([]);
   const [checkedProducts, setCheckedProducts] = useState([]);
   const [errorMassage, setErrorMassage] = useState("");
-  // const [keyWord, setKeyWord] = useState();
   const [filterdisplay, setfilterDisplay] = useState([]);
   const { searchParam } = useParams();
+  const devUrl = "http://localhost:3001/images/";
 
   useEffect(async () => {
     console.log(searchParam);
@@ -39,94 +38,87 @@ function SearchResult(props) {
 
   return (
     <Row id="titleRow">
-      <h1 id="searchTitle">Where you looking gor this?</h1>
-      <Col xs={2}>
-
+      <h1 id="searchTitle">Where you looking for this?</h1>
+      <Col xs={2}></Col>
+      <Col xs={8} className="flex">
+        {productsArray.length !== 0
+          ? productsArray.map((product, index) => (
+              <div key={index}>
+                <Card style={{ width: "18rem", height: "40rem" }} id="siteCard">
+                  <Card.Img variant="top" src={`${devUrl}${product.img}`} />
+                  <Card.Body>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      {product.name}
+                    </Card.Title>
+                    <Card.Text>{product.description}</Card.Text>
+                  </Card.Body>
+                  <ListGroup className="list-group-flush">
+                    <ListGroupItem>Total price: {product.price}</ListGroupItem>
+                    <ListGroupItem>duration: {product.days}</ListGroupItem>
+                    <ListGroupItem>
+                      Rating out of 5: {product.rating}
+                    </ListGroupItem>
+                  </ListGroup>
+                  <Card.Body>
+                    <LinkContainer to={`/productPage`}>
+                      <Button
+                        onClick={() => props.toProductPage(product.id)}
+                        id="showSiteButt"
+                        style={{
+                          backgroundColor: "lightgray",
+                          borderStyle: "solid",
+                          borderColor: "black",
+                          color: "black",
+                        }}
+                      >
+                        Show product
+                      </Button>
+                    </LinkContainer>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))
+          : productsArray.map((product, index) => (
+              <div key={index}>
+                <Card style={{ width: "18rem", height: "40rem" }} id="siteCard">
+                  <Card.Img
+                    variant="top"
+                    src={`${devUrl}/images/${product.img}`}
+                  />
+                  <Card.Body>
+                    <Card.Title style={{ fontWeight: "bold" }}>
+                      {product.name}
+                    </Card.Title>
+                    <Card.Text>{product.description}</Card.Text>
+                  </Card.Body>
+                  <ListGroup className="list-group-flush">
+                    <ListGroupItem>Total price: {product.price}</ListGroupItem>
+                    <ListGroupItem>duration: {product.days}</ListGroupItem>
+                    <ListGroupItem>
+                      Rating out of 5: {product.rating}
+                    </ListGroupItem>
+                  </ListGroup>
+                  <Card.Body>
+                    <LinkContainer to={`/productPage`}>
+                      <Button
+                        onClick={() => props.toProductPage(product.id)}
+                        id="showSiteButt"
+                        style={{
+                          backgroundColor: "lightgray",
+                          borderStyle: "solid",
+                          borderColor: "black",
+                          color: "black",
+                        }}
+                      >
+                        Show product
+                      </Button>
+                    </LinkContainer>
+                  </Card.Body>
+                </Card>
+              </div>
+            ))}
       </Col>
-    <Col xs={8} className="flex">
-      {props.products.length !== 0
-        ? props.products.map((product, index) => (
-            <div key={index}>
-              <Card style={{ width: "18rem", height: "40rem" }} id="siteCard">
-                <Card.Img
-                  variant="top"
-                  src={`${devUrl}/images/${product.img}`}
-                />
-                <Card.Body>
-                  <Card.Title style={{ fontWeight: "bold" }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroupItem>Total price: {product.price}</ListGroupItem>
-                  <ListGroupItem>duration: {product.days}</ListGroupItem>
-                  <ListGroupItem>
-                    Rating out of 5: {product.rating}
-                  </ListGroupItem>
-                </ListGroup>
-                <Card.Body>
-                  <LinkContainer to={`/productPage`}>
-                    <Button
-                      onClick={() => props.toProductPage(product.id)}
-                      id="showSiteButt"
-                      style={{
-                        backgroundColor: "lightgray",
-                        borderStyle: "solid",
-                        borderColor: "black",
-                        color: "black",
-                      }}
-                    >
-                      Show product
-                    </Button>
-                  </LinkContainer>
-                </Card.Body>
-              </Card>
-            </div>
-          ))
-        : productsArray.map((product, index) => (
-            <div key={index}>
-              <Card style={{ width: "18rem", height: "40rem" }} id="siteCard">
-                <Card.Img
-                  variant="top"
-                  src={`${devUrl}/images/${product.img}`}
-                />
-                <Card.Body>
-                  <Card.Title style={{ fontWeight: "bold" }}>
-                    {product.name}
-                  </Card.Title>
-                  <Card.Text>{product.description}</Card.Text>
-                </Card.Body>
-                <ListGroup className="list-group-flush">
-                  <ListGroupItem>Total price: {product.price}</ListGroupItem>
-                  <ListGroupItem>duration: {product.days}</ListGroupItem>
-                  <ListGroupItem>
-                    Rating out of 5: {product.rating}
-                  </ListGroupItem>
-                </ListGroup>
-                <Card.Body>
-                  <LinkContainer to={`/productPage`}>
-                    <Button
-                      onClick={() => props.toProductPage(product.id)}
-                      id="showSiteButt"
-                      style={{
-                        backgroundColor: "lightgray",
-                        borderStyle: "solid",
-                        borderColor: "black",
-                        color: "black",
-                      }}
-                    >
-                      Show product
-                    </Button>
-                  </LinkContainer>
-                </Card.Body>
-              </Card>
-            </div>
-          ))}
-    </Col>
-    <Col xs={2}>
-
-    </Col>
+      <Col xs={2}></Col>
     </Row>
   );
 }

@@ -38,7 +38,7 @@ const Footer = (props) => {
         <Nav.Link href="" style={{ fontSize: "25px" }}>
           <FontAwesomeIcon icon={faTwitterSquare} />
         </Nav.Link>
-        <p id="rights">All rights reserved © {currentYear} </p>
+        <p id="rights">All rights reserved © {currentYear} </p> 
       </Nav>
       <Form inline>
         <Nav.Link href="#pricing" id="contact" href="/contactUs">

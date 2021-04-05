@@ -3,6 +3,7 @@ const storeProviderObject = {
   userName: "user",
   email: "user123@gmail.com",
   cart: [],
+  wishlist: [],
 };
 export const StoreProviderContext = React.createContext(storeProviderObject);
 const StoreProvider = ({ children }) => {

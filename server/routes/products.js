@@ -13,11 +13,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/products/search/:keyword", async (req, res) => {
+router.get("/search/:keyword", async (req, res) => {
   console.log(req.params.keyword);
   const { keyword } = req.params;
   console.log(keyword);
-  productModel.find({ keywords: req.params.keywords }, (err, documents) => {
+  productModel.find({ keyWords:keyword }, (err, documents) => {
     err ? res.status(500).send("error") : res.status(200).send(documents);
   });
 });

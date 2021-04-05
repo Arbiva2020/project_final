@@ -77,12 +77,12 @@ border-width: 3px;
  margin: 10px;  
 }
 
-#allvac, #accessible, #organized {
+#allvac, #accessible, #organized { 
 margin-left: 100px;
 margin-right: 100px;
 border-style: solid;
 border-color: black;
-border-width: 3px;
-background-color: gray;
+border-width: 2px;
+background-color: lightgray;
 color: black;
 }

@@ -33,19 +33,26 @@ const places = [
   "Jerusalem",
   "galil",
   "Arava",
-  "Golan",
+  "Golan hights",
   "sea of Galilee",
   "Tel-Aviv",
 ];
 
-
+const rating = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+];
 
 function SiteCard(props) {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
   // const startDate = new Date();
   // const endDate = new Date();
-  const differenceInTime = endDate.getTime() - startDate.getTime();
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+  // const differenceInDays = endDate - startDate;
+  const differenceInTime = endDate - startDate;
   const differenceInDays = (differenceInTime) / (1000 * 3600 * 24);
 
   const handleStartChange = (e) => {
@@ -89,6 +96,16 @@ function SiteCard(props) {
     setCheckboxes({ ...checkboxes, [name]: !checkboxes[name] });
   };
 
+  // const handlePriceChange = (e) => {
+  //   const { price } = e.target;
+  //   setCheckboxes({ ...checkboxes, [price]: !checkboxes[price] });
+  // };
+
+    // const handleRatingChange = (e) => {
+  //   const { rating } = e.target;
+  //   setCheckboxes({ ...checkboxes, [rating]: !checkboxes[rating] });
+  // };
+
   function sortByRating() {
     console.log("rating");
     const sortArrayByRating = productsArray.sort(
@@ -109,6 +126,12 @@ function SiteCard(props) {
       .map((checkedName) => checkedName.toUpperCase())
       .includes(name.toUpperCase())
   );
+
+  // const productsByPrice = productsArray.filter(({ price }) =>
+  // checkedProducts.map(checkedPrice).includes(price));
+
+    // const productsByRating = productsArray.filter(({ rating }) =>
+  // checkedProducts.map(checkedRating).includes(rating));
 
   return (
     <Container>
@@ -142,7 +165,7 @@ function SiteCard(props) {
           </Form>
 
           <div>
-            <h6>Available offers by date:</h6>
+            <h5 style={{fontWeight:"bold"}}>Looking for a last minute offer?</h5>
             <label for="start" style={{ marginTop: "20px" }}>
               Arrival date:
             </label>
@@ -164,11 +187,13 @@ function SiteCard(props) {
             <Button 
               type="submit"
               style={{
-                backgroundColor: "gray",
+                backgroundColor: "lightgray",
+                color:"black",
                 borderStyle: "solid",
+                borderWidth:"2px",
                 borderColor: "black",
                 marginTop: "20px",
-              }} onClick={() => alert(`You were searching for a ${num} days vaccation. Sites available on this date are: "Red sea Hotel", Eilat`)}
+              }} onClick={() => alert(`You were searching for a ${differenceInTime} days vaccation. Sites available on this date are: "Red sea Hotel", Eilat`)}
             >
               HIT ME!
             </Button>
@@ -335,6 +360,7 @@ function SiteCard(props) {
                 >
                   Select rating:
                 </h5>
+
               </p>
               <input type="radio" id="one" name="drone" />
               <label for="huey">
@@ -400,7 +426,7 @@ function SiteCard(props) {
           <div id="byRating">
             <Button onClick={sortByRating} id="sort">
               {" "}
-              Sort
+              Sort by rating
             </Button>
           </div>
 

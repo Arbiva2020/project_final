@@ -1,7 +1,32 @@
+.cartDiv {
+  background-image: url("../../images/shoppingcart.jpg"); 
+  position: relative;
+}
+
+#extraDivCart {
+  background-image: url("../../images/shoppingcart.jpg"); 
+}
+
+/* .cartDiv::before {
+  content: "";
+  background-image: url("../../images/cartbackground.jpg");
+  background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
+} */
+
 #cartTitle {
     color: black;
     font-weight: bolder;
     font-family: Georgia, "Times New Roman", Times, serif;
+  }
+
+  td, th {
+     border: 2px black; 
   }
 
 

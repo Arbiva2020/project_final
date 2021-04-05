@@ -7,14 +7,15 @@ import "./fromTheMedia.css";
 // const[showHoverContent, setShowHoverContent] = useState(false);
 
 // function changeBackground(e) {
-//   e.target.style.background = 'red';
+//   e.target.style.background = 'red'; 
 // }
 
 function FromTheMedia(props) {
   return (
     <div id="mediaDiv">
       <Card>
-        <Card.Img id="jerusalemMediaImg" variant="top" src={JerusalemMedia} />
+        <Card.Img id="jerusalemMediaImg" variant="top" src={JerusalemMedia} style={{width:"100%", height:"250px", borderStyle:"solid", 
+        borderColor:"black", borderWidth:"3px", alignContent:"top"}}/>
         <Card.Body id="mediaCardBody">
           <Card.Text>
             <h3 id="fromMediah3">From the media:</h3>

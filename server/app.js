@@ -22,4 +22,4 @@ app.use("/blogs", blogsRoutes);
 app.use("/users", blogsRoutes);
 
 //the server we listen to:
-app.listen(PORT, () => console.log("server is runing..."));
+app.listen(PORT, () => console.log("server is runing on port: " + PORT));

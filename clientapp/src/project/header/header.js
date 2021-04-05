@@ -19,9 +19,11 @@ function Header() {
         variant="dark"
         id="headerNav"
       >
-        <h1 href="/" id="logo" className="logo_text_animated">
-          Travel Israel
-        </h1>
+        <LinkContainer to="/">
+          <h1 id="logo" className="logo_text_animated">
+            Travel Israel
+          </h1>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -50,10 +52,6 @@ function Header() {
               <NavDropdown.Item href="#action/3.3">
                 Send to a Friend
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                External Links
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
@@ -79,8 +77,8 @@ function Header() {
               style={{ margin: "8px", fontSize: "20px", color: "white" }}
             >
               <div>
-              <FontAwesomeIcon icon={faHeart} />
-              <span className="wishlist-length">
+                <FontAwesomeIcon icon={faHeart} />
+                <span className="wishlist-length">
                   {storeProvider.wishlist?.length}
                 </span>
               </div>

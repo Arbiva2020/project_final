@@ -17,7 +17,6 @@ import BlogB from "./project/blogMain/blogB";
 import BlogSingle from "./project/blogSingle/blogSingle";
 import OrderPage from "./project/orderPage/orderPage";
 import Cart from "./project/cart/cart";
-// import Wishlist from "./project/wishlist/wishlist";
 import LogIn from "./project/logIn/logIn";
 import CerateAccount from "./project/createAccount/createAccount";
 import LinkMe from "./project/linkMe/linkMe";
@@ -26,6 +25,7 @@ import AddReview from "./project/addReview/addReview";
 import ForgotPass from "./project/forgotPass/forgotPass";
 import OrdersTable from "./project/ordersTable/ordersTable";
 import SearchResult from "./project/searchResult/searchResult";
+import Wishlist from "./project/wishlist/wishlist";
 import { useContext } from "react";
 import StoreProvider, {
   StoreProviderContext,
@@ -166,6 +166,8 @@ const items = [
   },
 ];
 
+const blogs = [{}];
+
 const orders = [
   {
     OrderID: 111111,
@@ -205,9 +207,17 @@ function App() {
 
   function addItem(item) {
     storeProvider.cart.push(item);
+    storeProvider.wishlist.push(item);
     updateStoreProvider({ ...storeProvider });
     console.log(storeProvider);
   }
+
+  // function addItem(item) {
+  //   storeProvider.wishlist.push(item);
+  //   updateStoreProvider({ ...storeProvider });
+  //   console.log(storeProvider);
+  // }
+
   const [storeProvider, updateStoreProvider] = useContext(StoreProviderContext);
 
   return (
@@ -272,16 +282,47 @@ function App() {
               <Route
                 path="/singleItem/:id"
                 exact
-                component={() => <SingleItem item={id} addToCart={addItem} />}
+                component={() => (
+                  <SingleItem
+                    toSingleItem={(id) => {
+                      setId(id);
+                    }}
+                    item={id}
+                    addToCart={addItem}
+                  />
+                )}
               />
               <Route path="/weAreHiring" exact component={WeAreHiring} />
               <Route path="/mailMe" exact component={MailMe} />
               <Route path="/fromTheMedia" exact component={FromTheMedia} />
-              <Route path="/blogSingle" exact component={BlogSingle} />
-              <Route path="/blogB" exact component={BlogB} />
+              {/* <Route path="/blogSingle" exact component={BlogSingle} /> */}
+              <Route
+                path="/blogSingle/:id"
+                exact
+                component={() => <BlogSingle blog={id} />}
+              />
+              {/* <Route path="/blogB" exact component={BlogB} /> */}
+              <Route
+                exact
+                path="/blogB/:filter"
+                component={() => <BlogB blogs={blogs} />}
+              />
+              <Route
+                exact
+                path="/blogB"
+                component={() => (
+                  <BlogB
+                    toBlogSingle={(id) => {
+                      setId(id);
+                      console.log(id);
+                    }}
+                    blogs={blogs}
+                  />
+                )}
+              />
               <Route path="/orderPage" exact component={OrderPage} />
               <Route path="/cart" exact component={Cart} />
-              {/* <Route path="/wishlist" exact component={Wishlist} /> */}
+              <Route path="/wishlist" exact component={Wishlist} />
               <Route path="/logIn" exact component={LogIn} />
               <Route path="/createAccount" exact component={CerateAccount} />
               <Route path="/linkMe" exact component={LinkMe} />

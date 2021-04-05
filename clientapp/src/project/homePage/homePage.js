@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import {Container, Card, Button, CardColumns, Row, NavDropdown} from "react-bootstrap";
+import {Container, Card, Button, CardColumns, Col, Row, NavDropdown} from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 import "./homePage.css";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
@@ -13,13 +13,20 @@ import homeImgD from "../../images/iStock-467607415.jpg";
 
 function HomePage(props) {
 return (
+ <div>
+
 <Container>
-    <Card>
-        <Card.Link id="covid" style={{height:"50px", textAlign:"center"}}>
+  <Row>
+    <Card style={{width:"100%"}}>
+        <Card.Link id="covid" style={{height:"50px", textAlign:"center", width:"100%"}}>
           Find out more about COVID-19 restrictions <FontAwesomeIcon icon={faInfoCircle} href="https://govextra.gov.il/ministry-of-health/corona/corona-virus/"/></Card.Link>
     </Card>
-
-
+</Row>
+<Row>
+    {/* <Col xs={1}>
+      col
+</Col> */}
+<Col>
     <CardColumns>
   <Card>
     <Card.Img variant="top" src={homeImg} />
@@ -51,7 +58,7 @@ return (
   <Card>
     <Card.Img variant="top" src={homeImgB} />
     <Card.Body>
-      <Card.Title>travel News</Card.Title>
+      <Card.Title>travel News</Card.Title> 
       <Card.Text>
         Would you like us to keep you up to date with all of our latest news? Be the first
         to know about latest trips, coupons and offers!{' '}
@@ -112,7 +119,8 @@ return (
     </Card.Body>
   </Card>
 </CardColumns>
-
+</Col>
+</Row>
 <Card id="manyButt">
   <Card.Body>
     <Button variant="secondary" id="allvac" href="/siteCard">To all sites</Button>
@@ -133,6 +141,7 @@ return (
   </Card.Body>
 </Card>
 </Container>
+</div>
   );
 }
 

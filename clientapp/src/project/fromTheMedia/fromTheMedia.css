@@ -1,15 +1,15 @@
 #fromMediah3 {
   color: black;
   font-weight: bolder;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif; 
 }
 
-#jerusalemMediaImg {
-  width: auto;
-  height: 50%;
+/* #jerusalemMediaImg {
+  width: 100%;
+  height: 30%;
   background-size: contain;
   object-fit: cover;
-}
+} */
 
 .press:hover {
  background-color: gray;

@@ -12,10 +12,10 @@ function MailMe(props) {
 
   return (
     <div>
-      <h3 id="mailMeh3">Thank you for choosing us!</h3>
-      <h5 id="mailMeh5">We guarantee minimum updates necessary</h5>
       <Row>
         <Col xs={7}>
+          <h3 id="mailMeh3">Thank you for choosing us!</h3>
+          <h5 id="mailMeh5">We guarantee minimum updates necessary</h5>
           <Form onSubmit={handleSubmit(onSubmit)} id="keepMePosted">
             <Form.Row>
               <Col xs={3}>
@@ -112,7 +112,7 @@ function MailMe(props) {
           </Form>
         </Col>
 
-        <Col xs={5}>
+        <Col xs={5} id="mailMeimgcol">
           <Card className="mailMeCard">
             <Card.Img src={mailImg} alt="Card image" id="mailingImg" />
             <Card.ImgOverlay></Card.ImgOverlay>

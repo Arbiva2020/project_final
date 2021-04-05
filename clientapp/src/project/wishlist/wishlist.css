@@ -1,3 +1,15 @@
 #wishlistDiv {
-    background-image: "url=https://images.assetsdelivery.com/compings_v2/lovender/lovender1708/lovender170800116.jpg";
+    background-image: url("../../images/heartspattern.jpg");  
+/* opacity: 0.6; */
+}
+
+#wishlistDiv::after {
+  opacity: 0.4; 
+}
+
+#wishlistTitle {
+    font-family: Georgia, "Times New Roman", Times, serif; 
+  font-weight: bolder;
+  color: black;
+  margin-bottom: 20px;
 }

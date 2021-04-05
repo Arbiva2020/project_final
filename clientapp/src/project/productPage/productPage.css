@@ -55,7 +55,7 @@
   border-color: grey;
   width: 400px;
   height: 248px;
-  background-color:cornsilk;
+  background-color: cornsilk;
 }
 .page {
   padding: 20px !important;
@@ -64,35 +64,36 @@
 .productCarusel {
   size: inherit;
   margin: 20px;
-  size:inherit;
-  transform:scale(1, 1);
+  size: inherit;
+  transform: scale(1, 1);
   transition: 1s;
   width: 100%;
 }
 
 .d-block {
   height: 245px;
-  width: 450px; 
+  width: 450px;
 }
-#buttBack, #nav-dropdown, #buttNextTrip{
-border-style: solid;
-border-color: black;
-border-width: 3px;
-background-color: gray;
-color: white;
-display: inline-block;
-vertical-align: center;
-margin: 40px;
+#buttBack,
+#nav-dropdown,
+#buttNextTrip {
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  background-color: lightgray;
+  color: black;
+  display: inline-block;
+  vertical-align: center;
+  margin: 40px;
 }
 
 #buttBook {
   border-style: solid;
   border-color: black;
-  border-width: 5px;
+  border-width: 3px;
   background-color: cornsilk;
   color: black;
   font-weight: bolder;
-  
 }
 
 #cardTitle {
@@ -101,5 +102,5 @@ margin: 40px;
 
 #shineJumbo {
   background-image: url("https://previews.123rf.com/images/mariystocker/mariystocker1609/mariystocker160900164/63874253-beautiful-seamless-tropical-jungle-floral-pattern-background-with-palm-leaves-pop-art-trendy-style-b.jpg");
-/* background-image:url("./images/palm.jpg"); */
+  /* background-image:url("./images/palm.jpg"); */
 }

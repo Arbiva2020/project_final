@@ -1,20 +1,23 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Card, Button, Col, Table, Row } from "react-bootstrap";
+import { Row, Button, Col, Table, Image } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
+import Cartbackground from "../../images/cartbackground.jpg";
 import "./cart.css";
 import { useContext } from "react";
 import { StoreProviderContext } from "../storeProvider/storeProvider";
-import { PayPalButton } from "react-paypal-button-v2";
+// import { PayPalButton } from "react-paypal-button-v2";
+import PayPalButton from "../payPalButton/payPalButton";
 
 function Cart(props) {
   const [selectedId, setSelectedId] = useState();
+  const devUrl = "http://localhost:3001/images/";
   const [storeProvider, updateStoreProvider] = useContext(StoreProviderContext);
-  const totalPrice = storeProvider.cart.reduce(
+  const totalPrice = storeProvider.cart?.reduce(
     (acc, curr) => acc + curr.price,
     0
   );
-  const devUrl = "http://localhost:3001/images/";
+
   // const [items, setItems] = useState([]);
   // const [sum, setSum] = useState(initialSum);
   let initialSum = 0;
@@ -71,14 +74,23 @@ function Cart(props) {
       </td>
     </tr>
   ));
+
   return (
-    <div>
+    <div class="cartDiv">
+      {/* <Image style={{opacity:"0.7"}}>{Cartbackground}</Image> */}
       <p>
         <h1 id="cartTitle">Cart:</h1>
       </p>
       <Col xs={3}></Col>
       <Col md={{ span: 6, offset: 3 }}>
-        <Table striped bordered hover size="sm">
+        <Table
+          id="cartTable"
+          style={{
+            borderStyle: "solid",
+            borderColor: "black",
+            borderCollapse: "collapse",
+          }}
+        >
           <thead>
             <tr>
               <th>#</th>
@@ -120,9 +132,10 @@ function Cart(props) {
           <PayPalButton />
         </div>
       </Col>
-
+<Row style={{height:"200px"}}></Row>
       {/* {clientName ${'thank you for buying!'}} */}
     </div>
+    
   );
 }
 export default Cart;

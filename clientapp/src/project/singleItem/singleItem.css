@@ -1,46 +1,133 @@
 #itemImgCard {
-    align-content: center;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  align-content: center;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #colItem {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .sideImgCard {
-    display:flex;
-    justify-content:right;
-    margin-top: 40px;
-    margin-left: 60px;
+  display: flex;
+  justify-content: right;
+  margin-top: 40px;
+  margin-left: 60px;
 }
 
 #itemDetailCard {
-    margin-top: 40px;
-    border-style: none;
+  margin-top: 40px;
+  border-style: none;
 }
 
-#singleTitle { 
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: bolder;
-    color: black;
+#singleTitle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: black;
 }
 
-#addToCart, #addToWishlist {
-    margin: 10px;
-    width: 130px;
-   display: flex;
-   margin-left: 60px;
-   text-align: center;
+#addToCart,
+#addToWishlist {
+  margin: 10px;
+  width: 130px;
+  display: flex;
+  margin-left: 60px;
+  text-align: center;
 }
 
 #mightLike {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: bolder;
-    color: black;
-    margin: 50px;   
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bolder;
+  color: black;
+  margin: 50px;
+}
+
+#itemSingle {
+  display: flex;
+  justify-content: center;
+}
+
+#img0:hover,
+#img1:hover {
+  transform: scale(1.5, 1.5);
+  /* align-self: center; */
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#h2item {
+  margin-bottom: 40px;
+  overflow: hidden;
+  color: black;
+  text-decoration: none;
+  transition: 0.2s;
+  top: -100;
+  left: 0%;
+  width: 100%;
+  /* background: linear-gradient(180deg, transparent, #2196f3); */
+}
+
+#h2item:hover {
+  color: #255784;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  /* top:100%;
+transition: 1s;
+transition-delay: 0.25s; */
+}
+
+#h3item {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+#saleCol {
+  background: slategray;
+}
+
+#saleP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  position: relative;
+  font-size: 5em;
+  width: 100%;
+  font-weight: bold;
+  /* -webkit-box-reflect: below 1px linear-gradient(transparent#0004); */
+  /* -webkit-box-reflect: below; */
+  -webkit-box-reflect: linear-gradient (transparent#0004); 
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4,
+      0 0 80px #03bcf4, 0 0 160px #03bcf4;
+  }
 }

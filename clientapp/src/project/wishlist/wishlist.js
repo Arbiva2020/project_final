@@ -2,14 +2,16 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Card, Button, Col, Table, Row } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
-import "./cart.css";
+import "./wishlist.css";
 import { useContext } from "react";
 import { StoreProviderContext } from "../storeProvider/storeProvider";
 
 function Wishlist(props) {
+  // let wishlist = [{}];
+  // const[wishlist, setwishlist] = useState([]);
   const [selectedId, setSelectedId] = useState();
   const [storeProvider, updateStoreProvider] = useContext(StoreProviderContext);
-  const totalPrice = storeProvider.wishlist.reduce(
+  let totalPrice = storeProvider.wishlist.reduce(
     (acc, curr) => acc + curr.price,
     0
   );
@@ -31,11 +33,11 @@ function Wishlist(props) {
     console.log(price);
     updateStoreProvider({
       ...storeProvider,
-      cart: storeProvider.wishlist.sum((item) => item.price),
+      wishlist: storeProvider.wishlist.sum((item) => item.price),
     });
   };
 
-  function emptywishlist() {
+  function Emptywishlist() {
     updateStoreProvider({ ...storeProvider.wishlist, wishlist: [] });
   }
 
@@ -95,7 +97,7 @@ function Wishlist(props) {
       <Col xs={2}>
         <div>
           <Button
-            onClick={emptyWishlist}
+            onClick={Emptywishlist}
             style={{
               height: "35px",
               width: "220px",
@@ -109,9 +111,9 @@ function Wishlist(props) {
           >
             Empty wishlist
           </Button>
-          <PayPalButton />
         </div>
       </Col>
+      <Row style={{ height: "320px" }}></Row>
     </div>
   );
 }

@@ -31,7 +31,6 @@ import axios from "axios";
 // import { useContext } from 'react';
 // import { StoreProviderContext } from './StoreProvider-context'
 
-
 function Store(props) {
   const [itemsArray, setItemsArray] = useState([]);
   const [showHoverContent, setShowHoverContent] = useState(false);
@@ -50,16 +49,6 @@ function Store(props) {
     };
     sortedItems();
   }, []);
-
-  // let { filter } = useParams();
-  // let items = props.items;
-  // if (filter && filter != "All") {
-  //   items = items.filter((thing) => {
-  //     console.log(thing.categoryB);
-  //     return thing.category == filter || thing.categoryB == filter;
-  //   });
-  //   console.log(items);
-  // }
 
   return (
     <div>
@@ -113,7 +102,13 @@ function Store(props) {
         <Card className="bg-dark text-white" style={{ width: "100%" }}>
           <Card.Img
             src={hikingImg}
-            style={{ height: "20rem", objectFit: "cover" }}
+            style={{
+              height: "20rem",
+              objectFit: "cover",
+              borderStyle: "solid",
+              borderWidth: "3px",
+              borderColor: "black",
+            }}
             alt="Card image"
           />
         </Card>
@@ -172,12 +167,16 @@ function Store(props) {
                       // src={devUrl}
                     />
                     <Card.Body>
-                      <Card.Title>{item.name}</Card.Title>
-                      <Card.Text>{item.description}</Card.Text>
+                      <Card.Title style={{ fontWeight: "bold" }}>
+                        {item.name}
+                      </Card.Title>
+                      <Card.Text>{item.shortDescription}</Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                      <ListGroupItem>{item.price}</ListGroupItem>
-                      <ListGroupItem>{item.avaliability}</ListGroupItem>
+                      <ListGroupItem>
+                        Price: {item.price}NIS Status: {item.avaliability}
+                      </ListGroupItem>
+                      {/* <ListGroupItem></ListGroupItem> */}
                     </ListGroup>
                     <Card.Body>
                       <LinkContainer to={`/singleItem/${item._id}`}>

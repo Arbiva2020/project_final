@@ -29,11 +29,11 @@
 
 #dropdown-item-button {
     margin: 20px;
-    background-color:gray;
-    color:white;
+    background-color:lightgray;
+    color: black;
     border-style: solid;
     border-color: black;
-    border-width: 3px;
+    border-width: 2px;
   
 }
 
@@ -45,11 +45,11 @@
 #sort, #filterRating {
     margin: 20px;
     margin-top: 10px;
-    background-color:gray;
-    color:white;
+    background-color:lightgray;
+    color:black;
     border-style: solid;
     border-color: black;
-    border-width: 3px;
+    border-width: 2px;
     display:block;
   
 }
@@ -64,11 +64,11 @@
 #ratingSelect {
   text-align: left; 
   margin: 20px;
-  background-color: gray;
+  background-color: lightgray;
   border-style: solid;
   border-color: black;
-  border-width: 3px;
-  color: white;
+  border-width: 2px;
+  color: black;
 }
 
 #siteCard {
@@ -80,55 +80,19 @@
   text-align:left;
 }
 
-/* #rent {
-  size:inherit;
-  transform:scale(1, 1);
-  transition: 1s;
-  width: 100%;
-} */
-/* #rent:hover{
-  transform:scale(1.5, 1.5);
-} */
-
 #selectPrice {
   margin: 20px;
   display: block;
   text-align: left;
 }
 
-/* #camp {
-  margin: 20px;
-  size:inherit;
-  transform:scale(1, 1);
-  transition: 1s;
-  width: 100%;
-} */
-/* #camp:hover{
-    transform:scale(1.5, 1.5);
-} */
-
-/* #aid {
-  size:inherit;
-  transform:scale(1, 1);
-  transition: 1s;
-} */
-/* #aid:hover{
-  transform:scale(1.5, 1.5);
-} */
-
-
-.transportation {
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
 #filterCheck {
   margin: 20px;
-  background-color: gray;
-  color: white;
+  background-color: lightgray;
+  color: black;
   border-style: solid;
   border-color: black;
-  border-width: 3px;
+  border-width: 2px;
 }
 
 .bg-darkA {
@@ -148,8 +112,8 @@
 
 #camp, #aid, #rent {
   border-style: solid;
-  border-width: 3px;
-  border-color: black;
+  border-width: 2px;
+  border-color: black; 
 }
 
 #sortByPrice {

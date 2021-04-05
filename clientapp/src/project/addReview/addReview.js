@@ -18,7 +18,7 @@ function AddReview(props) {
       <Row>
         <Col xs={7}>
           <p>
-            <h3 id="addReviweTitle">Share thoughts of your own!</h3>
+            <h3 id="addReviweTitle">Share thoughts of your own!</h3> 
           </p>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Row>

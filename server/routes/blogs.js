@@ -14,16 +14,16 @@ router.get("/", (req, res) => {
 });
 
 router.get("/blog/:id", (req, res) => {
-  blogModel.find({ id }, (err, documents) => {
+  blogModel.find({  id: req.params.id }, (err, documents) => {
     err ? res.status(500).send("error") : res.status(200).send(documents);
   });
 });
 
-router.get("/blog/:preview", (req, res) => {
-  blogModel.find({ price }, (err, documents) => {
-    err ? res.status(500).send("error") : res.status(200).send(documents);
-  });
-});
+// router.get("/blog/:preview", (req, res) => {
+//   blogModel.find({ price }, (err, documents) => {
+//     err ? res.status(500).send("error") : res.status(200).send(documents);
+//   });
+// });
 
     
 router.post("/addNew", (req, res) => {

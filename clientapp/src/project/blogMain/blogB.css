@@ -14,7 +14,7 @@ col#photoPart2 {
 .flex {
   display: flex;
   flex-wrap: wrap;
-  overflow-y:visible;
+  overflow-y: visible;
 }
 #rowSortBlog {
   display: flex;
@@ -22,7 +22,9 @@ col#photoPart2 {
   align-items: center;
 }
 
- #nextBlogButt, #prevBlogButt, #sortByArea {
+#nextBlogButt,
+#prevBlogButt,
+#sortByArea {
   background-color: lightslategray;
   border-style: solid;
   border-width: 3px;
@@ -31,8 +33,11 @@ col#photoPart2 {
   color: white;
   display: inline-block;
   align-self: center;
- justify-content: center; 
- }
+  justify-content: center;
+}
 
- 
-
+#blogPreview {
+  overflow: hidden;
+  text-overflow: clip;
+  height: 173px;
+}
