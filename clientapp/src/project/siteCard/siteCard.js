@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { LinkContainer } from "react-router-bootstrap";
 import {
   Card,
@@ -38,15 +39,20 @@ const places = [
   "Tel-Aviv",
 ];
 
-const rating = [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
+const price = [
+  "1000",
+  "2000",
+  "3000",
+  "4000",
+  "5000",
 ];
 
 function SiteCard(props) {
+  const [views, setViews] = useState(0);
+  const handelAddView = ()=> {
+    setViews = (prevViews =>  prevViews +1);
+  }
+
   // const startDate = new Date();
   // const endDate = new Date();
   const [startDate, setStartDate] = useState(new Date());
@@ -70,6 +76,7 @@ function SiteCard(props) {
   const [errorMassage, setErrorMassage] = useState("");
   const devUrl = "http://localhost:3001";
   const [checkedProducts, setCheckedProducts] = useState([]);
+  const [checkedTrips, setCheckedTrips] = useState([]);
   const [checkboxes, setCheckboxes] = useState(
     places.reduce(
       (options, option) => ({
@@ -96,10 +103,10 @@ function SiteCard(props) {
     setCheckboxes({ ...checkboxes, [name]: !checkboxes[name] });
   };
 
-  // const handlePriceChange = (e) => {
-  //   const { price } = e.target;
-  //   setCheckboxes({ ...checkboxes, [price]: !checkboxes[price] });
-  // };
+  const handlePriceChange = (e) => {
+    const { price } = e.target;
+    setCheckboxes({ ...checkboxes, [price]: !checkboxes[price] });
+  };
 
     // const handleRatingChange = (e) => {
   //   const { rating } = e.target;
@@ -126,6 +133,11 @@ function SiteCard(props) {
       .map((checkedName) => checkedName.toUpperCase())
       .includes(name.toUpperCase())
   );
+
+  const relevantTrips = productsArray.filter(({ price }) =>
+  checkedTrips
+    .map((checkedPrice) => checkedPrice)
+);
 
   // const productsByPrice = productsArray.filter(({ price }) =>
   // checkedProducts.map(checkedPrice).includes(price));
@@ -254,7 +266,7 @@ function SiteCard(props) {
                     <Card.Body>
                       <LinkContainer to={`/productPage`}>
                     <Button
-                          onClick = {() => props.toProductPage(props.product.id)}
+                          onClick = {() => {props.toProductPage(props.product.id); {handelAddView};}}
                           id="showSiteButt"
                           style={{
                             backgroundColor: "lightgray",
@@ -266,6 +278,8 @@ function SiteCard(props) {
                           Show product
                         </Button>
                         </LinkContainer>
+                        <FontAwesomeIcon icon={faEye} style={{marginRight:"10px", marginLeft:"20px", color:"gray"}}/>
+                        <a>{views}</a>
                     </Card.Body>
                   </Card>
                 </div>
@@ -292,7 +306,7 @@ function SiteCard(props) {
                     <Card.Body>
                     <LinkContainer to={`/productPage`}>
                     <Button
-                          onClick={() => props.toProductPage(product.id)}
+                          onClick={() => {props.toProductPage(product.id); {handelAddView};}}
                           id="showSiteButt"
                           style={{
                             backgroundColor: "lightgray",
@@ -304,6 +318,8 @@ function SiteCard(props) {
                           Show product
                         </Button>
                         </LinkContainer>
+                        <FontAwesomeIcon icon={faEye} style={{marginRight:"10px", marginLeft:"20px", color:"gray"}}/>
+                        <a>{views}</a>
                     </Card.Body>
                   </Card>
                 </div>
@@ -318,7 +334,15 @@ function SiteCard(props) {
             >
               Filter by price:
             </h5>
+            {price.map((price) =>
             <Form.Check
+            type="checkbox"
+            label={price}
+            name={price}
+            onChange={handleChange}
+            />
+            )}
+            {/* <Form.Check
               type="checkbox"
               label="1000-2000"
               className="priceLevel"
@@ -342,8 +366,8 @@ function SiteCard(props) {
               className="priceLevel"
               onChange={handleChange}
             />
-            <Form.Check type="checkbox" label="All" className="priceLevel" />
-            <Button id="filterRating">
+            <Form.Check type="checkbox" label="All" className="priceLevel" /> */}
+            <Button id="filterRating" onClick={handleClick}>
               Filter
             </Button>
           </Form>

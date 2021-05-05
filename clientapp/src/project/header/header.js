@@ -9,6 +9,9 @@ import { StoreProviderContext } from "../storeProvider/storeProvider";
 
 function Header() {
   const [storeProvider, updateStoreProvider] = useContext(StoreProviderContext);
+  // const { register, handleSubmit, watch, errors } = useForm();
+  // const onSubmit = data =>console.log(data);
+
   return (
     <div>
       <Navbar
@@ -39,8 +42,8 @@ function Header() {
             <LinkContainer to="/store" style={{ marginRight: "20px" }}>
               <Nav.Link>Store</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/fromTheMedia" style={{ marginRight: "20px" }}>
-              <Nav.Link>From the media</Nav.Link>
+            <LinkContainer to="/maps" style={{ marginRight: "20px" }}>
+              <Nav.Link>Maps</Nav.Link>
             </LinkContainer>
             <NavDropdown title="Find out more" id="collasible-nav-dropdown">
               <LinkContainer to="/reviewsAndRatings">
@@ -49,9 +52,9 @@ function Header() {
               <LinkContainer to="/addReview">
                 <NavDropdown.Item>Add Review</NavDropdown.Item>
               </LinkContainer>
-              <NavDropdown.Item href="#action/3.3">
-                Send to a Friend
-              </NavDropdown.Item>
+              <LinkContainer to="/fromTheMedia">
+                <NavDropdown.Item>From the media</NavDropdown.Item>
+              </LinkContainer>
             </NavDropdown>
           </Nav>
           <Nav>

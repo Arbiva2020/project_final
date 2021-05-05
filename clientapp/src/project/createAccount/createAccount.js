@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useForm } from "react-hook-form";
 import { Card, Button, Col, Form, Row } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
@@ -8,9 +8,30 @@ import axios from "axios";
 
 function CreateAccount(props) {
 
+var [firstName,setFirstName]=useState() 
+var [lastName,setLastName]=useState()
+var [email,setEmail]=useState()
+var [passord,setPassword]=useState()
+
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => axios.post('http://localhost:3001/createAccount', data);
-  console.log(watch("example"));
+  const onSubmit = async data => {await axios.post('http://localhost:3001/users/register', data);
+  (()=>{
+    // Once posted, the user will be notified 
+    alert('You have been added to the system!');
+})}
+  // console.log(watch("example"));
+//   fetch(onSubmit, {
+//     method: 'POST',
+//     headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({ // We should keep the fields consistent for managing this data later
+//         name: name,
+//         clockedIn:false,
+//         dates:[]
+//     })
+// })
 
   return (
     <div>

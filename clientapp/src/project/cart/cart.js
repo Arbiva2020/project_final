@@ -132,7 +132,7 @@ function Cart(props) {
           <PayPalButton />
         </div>
       </Col>
-<Row style={{height:"200px"}}></Row>
+<Row style={{height:"180px"}}></Row>
       {/* {clientName ${'thank you for buying!'}} */}
     </div>
     
