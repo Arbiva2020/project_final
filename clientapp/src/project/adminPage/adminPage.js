@@ -14,3 +14,28 @@ function AdminPage(props) {
   );
 }
 export default AdminPage;
+
+
+{/* <Col md={{ span: 6, offset: 3 }}>
+        <Table
+          id="cartTable"
+          style={{
+            borderStyle: "solid",
+            borderColor: "black",
+            borderCollapse: "collapse",
+          }}
+        >
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item image</th>
+              <th>Item Name</th>
+              <th>Item description</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Remove Item</th>
+            </tr>
+          </thead>
+
+          <tbody>{rows}</tbody>
+        </Table> */}

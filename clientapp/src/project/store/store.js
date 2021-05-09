@@ -200,7 +200,10 @@ function Store(props) {
             </Col>
           </Row>
         </Col>
-        <Col xs={2}>
+        
+        <Col xs={2}   
+            onMouseEnter={() => setShowHoverContent(true)}
+            onMouseLeave={() => setShowHoverContent(false)}>
           <Card
             className="bg-dark text-white"
             style={{
@@ -209,8 +212,6 @@ function Store(props) {
               marginRight: "20px",
               align: "top",
             }}
-            onMouseEnter={() => setShowHoverContent(true)}
-            onMouseLeave={() => setShowHoverContent(false)}
           >
             <Card.Img
               src={manInForest}

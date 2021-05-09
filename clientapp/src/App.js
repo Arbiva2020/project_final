@@ -26,6 +26,7 @@ import ForgotPass from "./project/forgotPass/forgotPass";
 import OrdersTable from "./project/ordersTable/ordersTable";
 import SearchResult from "./project/searchResult/searchResult";
 import Wishlist from "./project/wishlist/wishlist";
+import Maps from "./project/maps/maps";
 import { useContext } from "react";
 import StoreProvider, {
   StoreProviderContext,
@@ -49,6 +50,7 @@ import TentImg1 from "./images/greenTent1.jpg";
 import TentImg2 from "./images/greenTent2.jpg";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import LocationMaps from "./project/maps/location";
 
 const products = [
   {
@@ -338,6 +340,8 @@ function App() {
                 component={() => <OrdersTable order={orders} />}
               />
               <Route path="/forgotPass" exact component={ForgotPass} />
+              <Route exact path="/maps" component={Maps} />
+              <Route exact path="/maps" component={LocationMaps} />
               <Route
                 exact
                 path="/searchResult/:searchParam"
@@ -367,3 +371,5 @@ function App() {
 }
 
 export default App;
+
+// {Array(trip.rating).map((val, _) => <Start />)}

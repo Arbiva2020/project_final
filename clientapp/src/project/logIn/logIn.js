@@ -4,6 +4,9 @@ import { Card, Button, Col, Form, Row, Nav } from "react-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
 import deer from "../../images/3733725672.jpg";
 import "./logIn.css";
+import axios from 'axios';
+// import storeProvider from "./storeProvider";
+
 
 function LogIn(props) {
   const { register, handleSubmit, watch, errors } = useForm();
@@ -12,8 +15,6 @@ function LogIn(props) {
 
   return (
     <div>
-      
-
       <Row>
         <Col xs={7} id="logInCol">
           <p>
