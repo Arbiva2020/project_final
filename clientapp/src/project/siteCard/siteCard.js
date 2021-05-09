@@ -39,39 +39,40 @@ const places = [
   "Tel-Aviv",
 ];
 
-const price = [
-  "1000",
-  "2000",
-  "3000",
-  "4000",
-  "5000",
-];
+const price = ["1000", "2000", "3000", "4000", "5000"];
 
 function SiteCard(props) {
+  //views:
   const [views, setViews] = useState(0);
-  const handelAddView = ()=> {
-    setViews = (prevViews =>  prevViews +1);
-  }
-
-  // const startDate = new Date();
-  // const endDate = new Date();
+    const handelAddView = () => {
+    setViews = (prevViews) => prevViews + 1;
+    };
+  //async
+    const updateView = async (data) => {
+      data.views++;
+      await axios.put("http://localhost:3001/products/update", data);
+      () => {
+        // Once posted, the user will be notified
+        alert("Interested? for more details, call: 1-700-700-700!");
+      };
+    };
+ 
+  //Dates:
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  // const differenceInDays = endDate - startDate;
   const differenceInTime = endDate - startDate;
-  const differenceInDays = (differenceInTime) / (1000 * 3600 * 24);
-
+  const differenceInDays = differenceInTime / (1000 * 3600 * 24);
   const handleStartChange = (e) => {
-    const startDate  = e.target;
+    const startDate = e.target;
     setStartDate({ ...startDate, [e.target.startDate]: e.target.value });
   };
 
   const handleEndChange = (e) => {
-    const endDate  = e.target;
+    const endDate = e.target;
     setEndDate({ ...endDate, [e.target.endDate]: e.target.value });
   };
 
-
+  //filter:
   const [productsArray, setProductsArray] = useState([]);
   const [errorMassage, setErrorMassage] = useState("");
   const devUrl = "http://localhost:3001";
@@ -83,7 +84,7 @@ function SiteCard(props) {
         ...options,
         [option]: false,
       }),
-       []
+      []
     )
   );
 
@@ -108,7 +109,7 @@ function SiteCard(props) {
     setCheckboxes({ ...checkboxes, [price]: !checkboxes[price] });
   };
 
-    // const handleRatingChange = (e) => {
+  // const handleRatingChange = (e) => {
   //   const { rating } = e.target;
   //   setCheckboxes({ ...checkboxes, [rating]: !checkboxes[rating] });
   // };
@@ -135,14 +136,13 @@ function SiteCard(props) {
   );
 
   const relevantTrips = productsArray.filter(({ price }) =>
-  checkedTrips
-    .map((checkedPrice) => checkedPrice)
-);
+    checkedTrips.map((checkedPrice) => checkedPrice)
+  );
 
   // const productsByPrice = productsArray.filter(({ price }) =>
   // checkedProducts.map(checkedPrice).includes(price));
 
-    // const productsByRating = productsArray.filter(({ rating }) =>
+  // const productsByRating = productsArray.filter(({ rating }) =>
   // checkedProducts.map(checkedRating).includes(rating));
 
   return (
@@ -177,11 +177,14 @@ function SiteCard(props) {
           </Form>
 
           <div>
-            <h5 style={{fontWeight:"bold"}}>Looking for a last minute offer?</h5>
+            <h5 style={{ fontWeight: "bold" }}>
+              Looking for a last minute offer?
+            </h5>
             <label for="start" style={{ marginTop: "20px" }}>
               Arrival date:
             </label>
-            <input onChange={handleStartChange}
+            <input
+              onChange={handleStartChange}
               type="date"
               id="start"
               name="trip-start"
@@ -190,22 +193,28 @@ function SiteCard(props) {
             <label for="end" style={{ marginTop: "20px" }}>
               Departure date:
             </label>
-            <input onChange = {handleEndChange}
+            <input
+              onChange={handleEndChange}
               type="date"
               id="end"
               name="trip-end"
             />
 
-            <Button 
+            <Button
               type="submit"
               style={{
                 backgroundColor: "lightgray",
-                color:"black",
+                color: "black",
                 borderStyle: "solid",
-                borderWidth:"2px",
+                borderWidth: "2px",
                 borderColor: "black",
                 marginTop: "20px",
-              }} onClick={() => alert(`You were searching for a ${differenceInTime} days vaccation. Sites available on this date are: "Red sea Hotel", Eilat`)}
+              }}
+              onClick={() =>
+                alert(
+                  `You were searching for a ${differenceInTime} days vaccation. Sites available on this date are: "Red sea Hotel", Eilat`
+                )
+              }
             >
               HIT ME!
             </Button>
@@ -219,22 +228,22 @@ function SiteCard(props) {
                 Transportation:
               </h5>
             </p>
-            <Card className="transportation" style={{marginBottom:"20px"}}>
+            <Card className="transportation" style={{ marginBottom: "20px" }}>
               <Card.Link href="https://www.egged.co.il/">
                 <Card.Img src={eggedImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation" style={{marginBottom:"20px"}}>
+            <Card className="transportation" style={{ marginBottom: "20px" }}>
               <Card.Link href="https://www.rail.co.il/">
                 <Card.Img src={trainImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation" style={{marginBottom:"20px"}}>
+            <Card className="transportation" style={{ marginBottom: "20px" }}>
               <Card.Link href="https://www.metropoline.com/Pages/Home.aspx?p=Home#/HomeMain/1">
                 <Card.Img src={metroImg} alt="Card image" />
               </Card.Link>
             </Card>
-            <Card className="transportation" style={{marginBottom:"20px"}}>
+            <Card className="transportation" style={{ marginBottom: "20px" }}>
               <Card.Link href="https://www.israir.co.il/">
                 <Card.Img src={israImg} alt="Card image" />
               </Card.Link>
@@ -255,31 +264,49 @@ function SiteCard(props) {
                       src={`${devUrl}/images/${product.img}`}
                     />
                     <Card.Body>
-                      <Card.Title style={{fontWeight:"bold"}}>{product.name}</Card.Title>
+                      <Card.Title style={{ fontWeight: "bold" }}>
+                        {product.name}
+                      </Card.Title>
                       <Card.Text>{product.description}</Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                    <ListGroupItem>Total price: {product.price}</ListGroupItem>
+                      <ListGroupItem>
+                        Total price: {product.price}
+                      </ListGroupItem>
                       <ListGroupItem>duration: {product.days}</ListGroupItem>
-                      <ListGroupItem>Rating out of 5: {product.rating}</ListGroupItem>
+                      <ListGroupItem>
+                        Rating out of 5: {product.rating}
+                      </ListGroupItem>
                     </ListGroup>
                     <Card.Body>
                       <LinkContainer to={`/productPage`}>
-                    <Button
-                          onClick = {() => {props.toProductPage(props.product.id); {handelAddView};}}
+                        <Button
+                          onClick={() => {
+                            props.toProductPage(props.product.id);
+                            
+                              // {updateView();};
+                            
+                          }}
                           id="showSiteButt"
                           style={{
                             backgroundColor: "lightgray",
                             borderStyle: "solid",
                             borderColor: "black",
-                            color:"black",
+                            color: "black",
                           }}
                         >
                           Show product
                         </Button>
-                        </LinkContainer>
-                        <FontAwesomeIcon icon={faEye} style={{marginRight:"10px", marginLeft:"20px", color:"gray"}}/>
-                        <a>{views}</a>
+                      </LinkContainer>
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        style={{
+                          marginRight: "10px",
+                          marginLeft: "20px",
+                          color: "gray",
+                        }}
+                      />
+                      <a>{views}</a>
                     </Card.Body>
                   </Card>
                 </div>
@@ -295,31 +322,49 @@ function SiteCard(props) {
                       src={`${devUrl}/images/${product.img}`}
                     />
                     <Card.Body>
-                      <Card.Title style={{fontWeight:"bold"}}>{product.name}</Card.Title>
+                      <Card.Title style={{ fontWeight: "bold" }}>
+                        {product.name}
+                      </Card.Title>
                       <Card.Text>{product.description}</Card.Text>
                     </Card.Body>
                     <ListGroup className="list-group-flush">
-                      <ListGroupItem>Total price: {product.price}</ListGroupItem>
+                      <ListGroupItem>
+                        Total price: {product.price}
+                      </ListGroupItem>
                       <ListGroupItem>duration: {product.days}</ListGroupItem>
-                      <ListGroupItem>Rating out of 5: {product.rating}</ListGroupItem>
+                      <ListGroupItem>
+                        Rating out of 5: {product.rating}
+                      </ListGroupItem>
                     </ListGroup>
                     <Card.Body>
-                    <LinkContainer to={`/productPage`}>
-                    <Button
-                          onClick={() => {props.toProductPage(product.id); {handelAddView};}}
+                      <LinkContainer to={`/productPage`}>
+                        <Button
+                          onClick={() => {
+                            props.toProductPage(product.id);
+                            
+                            // {updateView();}; 
+                            
+                          }}
                           id="showSiteButt"
                           style={{
                             backgroundColor: "lightgray",
                             borderStyle: "solid",
                             borderColor: "black",
-                            color:"black",
+                            color: "black",
                           }}
                         >
                           Show product
                         </Button>
-                        </LinkContainer>
-                        <FontAwesomeIcon icon={faEye} style={{marginRight:"10px", marginLeft:"20px", color:"gray"}}/>
-                        <a>{views}</a>
+                      </LinkContainer>
+                      <FontAwesomeIcon
+                        icon={faEye}
+                        style={{
+                          marginRight: "10px",
+                          marginLeft: "20px",
+                          color: "gray",
+                        }}
+                      />
+                      <a>{views}</a>
                     </Card.Body>
                   </Card>
                 </div>
@@ -334,14 +379,14 @@ function SiteCard(props) {
             >
               Filter by price:
             </h5>
-            {price.map((price) =>
-            <Form.Check
-            type="checkbox"
-            label={price}
-            name={price}
-            onChange={handleChange}
-            />
-            )}
+            {price.map((price) => (
+              <Form.Check
+                type="checkbox"
+                label={price}
+                name={price}
+                onChange={handleChange}
+              />
+            ))}
             {/* <Form.Check
               type="checkbox"
               label="1000-2000"
@@ -384,7 +429,6 @@ function SiteCard(props) {
                 >
                   Select rating:
                 </h5>
-
               </p>
               <input type="radio" id="one" name="drone" />
               <label for="huey">

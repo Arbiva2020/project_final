@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {useLocation, useHistory} from "react-router";
 import { Card, Form, Col, Row, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { propTypes } from "react-bootstrap/esm/Image";
@@ -7,6 +8,9 @@ import "./blogSingle.css";
 import axios from "axios";
 
 function BlogSingle(props) {
+  const location  = useLocation();
+  const history = useHistory();
+  console.log(location);
   const [blog, setBlog] = useState([]);
   const [blogsArray, setBlogsArray] = useState([props.blogs]);
   const devUrl = "http://localhost:3001/images/";
@@ -21,6 +25,10 @@ function BlogSingle(props) {
     };
     getData();
   }, []);
+
+function goBackHandle(){
+  history.goBack();
+}
 
   return (
     <div>
@@ -50,7 +58,38 @@ function BlogSingle(props) {
       >
         Back to blogs
       </Button>
-    </LinkContainer> 
+      </LinkContainer> 
+      <Button
+        onClick={goBackHandle}
+        style={{
+          margin: "20px",
+          backgroundColor: "lightgray",
+          color: "black",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderWidth: "2px",
+          verticalAlign: "buttom",
+          display: "inline",
+        }}
+      >
+        Next blog
+      </Button>
+      <Button
+        onClick={goBackHandle}
+        style={{
+          margin: "20px",
+          backgroundColor: "lightgray",
+          color: "black",
+          borderStyle: "solid",
+          borderColor: "black",
+          borderWidth: "2px",
+          verticalAlign: "buttom",
+          display: "inline",
+        }}
+      >
+        Previous blog
+      </Button>
+   
       </Col>
       <Col xs={3} style={{borderStyle:"groove"}}>
       <h5 style={{fontWeight:"bold", margin:"20px"}}>How would you like to post a blog?</h5>  
